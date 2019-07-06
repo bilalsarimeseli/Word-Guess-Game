@@ -1,37 +1,59 @@
 header {
-    border: 3px solid black;
+    border: 3px solid blue;
     height: 300px;
     width: 80%;
     font-size: 20px;
     text-align: center;
     margin: 15px auto;
+    background-image: url(..//images/index.jpg);
 }
 
 
 .underscore {
-    border: 3px solid black;
+    border: 3px solid green;
     height: 150px;
     width: 80%;
     font-size: 100px;
     text-align: center;
     margin: 50px auto;
+    background-color: aquamarine;
 }
 
 .rightGuess {
-    border: 3px solid black;
+    border: 3px solid yellow;;
     height: 150px;
     width: 80%;
     font-size: 20px;
     text-align: center;
     margin: 50px auto;
+    background-color: yellow;
 }
 
 
 .wrongGuess {
-    border: 3px solid black;
+    border: 3px solid cadetblue;
     height: 150px;
     width: 80%;
     font-size: 20px;
     text-align: center;
     margin: 15px auto;
+    background-color: red;
+}
+
+
+body {
+    background-image: url(../images/pow-star.png);
+}
+
+
+h1 {
+    color: lightyellow;
+    text-align: center;
+    margin: auto 0;
+    font-size: 25px;
+}
+
+h2 {
+    color: yellow;
+    font-family: fantasy;
 }
