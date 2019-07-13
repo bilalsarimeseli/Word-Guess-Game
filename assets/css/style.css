@@ -6,10 +6,11 @@ header {
     text-align: center;
     margin: 15px auto;
     background-image: url(..//images/index.jpg);
+    
 }
 
 
-.underscore {
+.underScore {
     border: 3px solid green;
     height: 150px;
     width: 80%;
@@ -17,12 +18,31 @@ header {
     text-align: center;
     margin: 50px auto;
     background-color: aquamarine;
+ 
+}
+
+p {
+    text-align: center;
+    color: red;
+    font-size: 30px;
+}
+
+.attemptsLeft {
+    border: 3px solid green;
+    height: 40px;
+    width: 25%;
+    font-size: 20px;
+    text-align: center;
+    margin: 50px auto;
+    background-color: pink;
+    align-content: center;
+
 }
 
 .rightGuess {
     border: 3px solid yellow;;
-    height: 150px;
-    width: 80%;
+    height: 80px;
+    width: 50%;
     font-size: 20px;
     text-align: center;
     margin: 50px auto;
@@ -32,8 +52,8 @@ header {
 
 .wrongGuess {
     border: 3px solid cadetblue;
-    height: 150px;
-    width: 80%;
+    height: 80px;
+    width: 50%;
     font-size: 20px;
     text-align: center;
     margin: 15px auto;
