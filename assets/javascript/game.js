@@ -1,13 +1,14 @@
 //GLOBAL VARIABLES
 //CREATE AN ARRAY OF WORDS
 
-var words = ['momentum', 'moment', 'torque', 'pressure', 'quark', 'spectrum', 'refraction', 'velocity', 'position', 'vector', 'pascal', 'joule', 'newton', 'watt', 'ampere', 'wave', 'induction', 'resistance', 'acceleration', 'scalar', 'force']
+var words = [ 'momentum', 'moment', 'torque', 'pressure', 'quark', 'spectrum', 'refraction', 'velocity', 'position', 'vector', 'pascal', 'joule', 'newton', 'watt', 'ampere', 'wave', 'induction', 'resistance', 'acceleration', 'scalar', 'force' ]
 
 
 //CHOOSES WORDS RANDOMLY
 
 let randNum = Math.floor(Math.random() * words.length);
-let chosenWord = words[randNum];
+let chosenWord = words[ randNum ];
+console.log(chosenWord)
 let rightWord = [];
 let wrongWord = [];
 let underScore = [];
@@ -37,6 +38,11 @@ let generateUnderscore = () => {
     return underScore;
 }
 console.log(generateUnderscore());
+console.log("underscore: ", underScore)
+docUnderScore[ 0 ].innerHTML = underScore.join(' ');
+
+docWrongGuess[ 0 ].innerHTML = ""
+docRightGuess[ 0 ].innerHTML = "";
 
 //GETS USER`s GUESS
 
@@ -46,9 +52,9 @@ document.addEventListener('keypress', function (event) {
 
     console.log(event.keyCode);
     console.log(underScore)
-    attemptsLeft--;
 
-    docAttempts.innerHTML = attemptsLeft;
+
+    
 
     if (attemptsLeft < 0) {
         looses++
@@ -58,6 +64,7 @@ document.addEventListener('keypress', function (event) {
 
     }
     else {
+       
 
         let keyword = String.fromCharCode(event.keyCode);
         //IF USER`s GUESS IS RIGHT
@@ -65,39 +72,44 @@ document.addEventListener('keypress', function (event) {
         if (chosenWord.indexOf(keyword) > -1) {
             //add to right words array
 
+            for (var i = 0; i < chosenWord.length; i++) {
+                if (keyword === chosenWord[ i ]) {
+                    rightWord.push(keyword);
 
+                    //replace underscore with the right letter
 
-            rightWord.push(keyword);
+                    underScore[ i ] = keyword;
 
-            //replace underscore with the right letter
+                    docUnderScore[ 0 ].innerHTML = underScore.join(' ');
+                    docRightGuess[ 0 ].innerHTML = rightWord;
 
-            underScore[chosenWord.indexOf(keyword)] = keyword;
+                    //checks to see if user word matches the guesses
 
-            docUnderScore[0].innerHTML = underScore.join(' ');
-            docRightGuess[0].innerHTML = rightWord;
+                    if (underScore.join('') == chosenWord) {
+                        wins++
+                        //alert('You Win');
+                        document.getElementById("alerts").innerHTML = "you win"
+                        reset()
+                    }
 
-            //checks to see if user word matches the guesses
-
-            if (underScore.join('') == chosenWord) {
-                wins++
-                alert('You Win');
-                document.getElementById("alerts").innerHTML = "you win"
-                reset()
+                }
             }
         } else {
+            attemptsLeft--;
+            docAttempts.innerHTML = attemptsLeft;
             wrongWord.push(keyword);
-            docWrongGuess[0].innerHTML = wrongWord;
+            docWrongGuess[ 0 ].innerHTML = wrongWord;
         }
 
     };
 })
 
 
-function reset() {
+function reset () {
     console.log("reset")
     console.log(wins, looses)
     randNum = Math.floor(Math.random() * words.length);
-    chosenWord = words[randNum];
+    chosenWord = words[ randNum ];
     underScore = [];
     rightWord = [];
     wrongWord = [];
@@ -106,10 +118,10 @@ function reset() {
 
     underscore = generateUnderscore()
     console.log("underscore: ", underScore)
-    docUnderScore[0].innerHTML = underScore.join(' ');
+    docUnderScore[ 0 ].innerHTML = underScore.join(' ');
 
-    docWrongGuess[0].innerHTML = ""
-    docRightGuess[0].innerHTML = "";
+    docWrongGuess[ 0 ].innerHTML = ""
+    docRightGuess[ 0 ].innerHTML = "";
 
 
 }
