@@ -8,3 +8,4 @@ A very simple JS WordGuess Game using Physics Vocabulary. The program is not aes
 ### Screenshot
 ![scalar](https://github.com/bilalsarimeseli/Word-Guess-Game/blob/master/assets/images/Screen%20Shot%202020-02-22%20at%202.19.27%20PM.png?raw=true)
 ### Play Here
+ [Live Link to Play the game] (https://bilalsarimeseli.github.io/Word-Guess-Game/)
